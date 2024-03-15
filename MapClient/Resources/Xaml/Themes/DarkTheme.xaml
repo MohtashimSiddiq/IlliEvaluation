@@ -1,0 +1,45 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Map.Client.Resources"
+					xmlns:system="clr-namespace:System;assembly=mscorlib">
+	<system:String x:Key="Theme">Dark Theme</system:String>
+	<SolidColorBrush x:Key="brush_Background">#1e1e1e</SolidColorBrush>
+	<SolidColorBrush x:Key="brush_Primary">#333333</SolidColorBrush>
+	<SolidColorBrush x:Key="brush_Secondary">#333337</SolidColorBrush>
+	<SolidColorBrush x:Key="brush_textColor">White</SolidColorBrush>
+	<SolidColorBrush x:Key="brush_textHoverColor">#0e98da</SolidColorBrush>
+	<SolidColorBrush x:Key="brush_menuTextHoverColor">#6ebbeb</SolidColorBrush>
+	<SolidColorBrush x:Key="brush_menuTextColor">White</SolidColorBrush>
+	<SolidColorBrush x:Key="brush_buttonColor">#144d87</SolidColorBrush>
+	<SolidColorBrush x:Key="brush_buttonHoverColor">#0064a7</SolidColorBrush>
+	<SolidColorBrush x:Key="brush_buttonTextColor">#fff</SolidColorBrush>
+	<SolidColorBrush x:Key="brush_dgHeaderTextColor">#fff</SolidColorBrush>
+	<SolidColorBrush x:Key="brush_combo">#333337</SolidColorBrush>
+	<SolidColorBrush x:Key="brush_comboHover">#6ebbeb</SolidColorBrush>
+	<SolidColorBrush x:Key="brush_comboPopup">#333337</SolidColorBrush>
+	<SolidColorBrush x:Key="brush_infoMsgBxBackground">#213c5e</SolidColorBrush>
+	<SolidColorBrush x:Key="brush_errMsgBxBackground">#6B0101</SolidColorBrush>
+	<SolidColorBrush x:Key="brush_confirmMsgBxBackground">#333333</SolidColorBrush>
+
+	<SolidColorBrush x:Key="brush_tabSelected">#333333</SolidColorBrush>
+	<SolidColorBrush x:Key="brush_tabUnselected">#555555</SolidColorBrush>
+	<SolidColorBrush x:Key="brush_treeViewItemBackground">#555555</SolidColorBrush>
+	<SolidColorBrush x:Key="brush_treeViewItemForeground">Black</SolidColorBrush>
+	
+
+	<BitmapImage x:Key="imgSettings" UriSource="/Resources/Images/Dark/settings.png" ></BitmapImage>
+	<BitmapImage x:Key="imgRoles" UriSource="/Resources/Images/Dark/roles.png" ></BitmapImage>
+	<BitmapImage x:Key="imgGrid" UriSource="/Resources/Images/Dark/grid.png" ></BitmapImage>
+	<BitmapImage x:Key="imgTree" UriSource="/Resources/Images/Dark/tree.png" ></BitmapImage>
+	<BitmapImage x:Key="imgEdit" UriSource="/Resources/Images/Dark/edit.png" ></BitmapImage>
+	<BitmapImage x:Key="imgDelete" UriSource="/Resources/Images/Dark/delete.png" ></BitmapImage>
+	<BitmapImage x:Key="imgEditHover" UriSource="/Resources/Images/edit.png" ></BitmapImage>
+	<BitmapImage x:Key="imgDeleteHover" UriSource="/Resources/Images/delete.png" ></BitmapImage>
+	<BitmapImage x:Key="imgLocale" UriSource="/Resources/Images/Dark/locale.png" ></BitmapImage>
+	<BitmapImage x:Key="imgTheme" UriSource="/Resources/Images/Dark/brush.png" ></BitmapImage>
+	<BitmapImage x:Key="imgRoleSeperator" UriSource="/Resources/Images/Dark/arrow.png" ></BitmapImage>
+	<BitmapImage x:Key="imgAddRole" UriSource="/Resources/Images/addCircled.png" ></BitmapImage>
+	<BitmapImage x:Key="imgEmployeePage" UriSource="/Resources/Images/Dark/employees.png" ></BitmapImage>
+	<BitmapImage x:Key="imgRoleDelete" UriSource="/Resources/Images/Dark/delete.png" ></BitmapImage>
+    <BitmapImage x:Key="imgMap" UriSource="/Resources/Images/Dark/map.png" ></BitmapImage>
+</ResourceDictionary>

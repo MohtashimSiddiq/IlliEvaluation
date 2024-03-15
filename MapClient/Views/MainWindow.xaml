@@ -1,0 +1,88 @@
+﻿<dx:DXWindow x:Class="Map.Client.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Map.Client"
+        xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+		mc:Ignorable="d" 
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        Title="MainWindow" Height="450" Width="800" WindowState="Normal" 
+		xmlns:customControls="clr-namespace:Map.Client.Resources.CustomControls" 
+		xmlns:mvvm="http://prismlibrary.com/" WindowStyle="None" AllowsTransparency="True"
+		mvvm:ViewModelLocator.AutoWireViewModel="True">
+	<!--DataContext="{Binding Main, Source={StaticResource Locator}}"-->
+	<Grid>
+	<Border BorderBrush="{DynamicResource brush_Primary}"  BorderThickness="2" Background="{DynamicResource brush_Background}"  >
+		<Grid MouseDown="Window_MouseDown" Background="{Binding Path=Background, RelativeSource={RelativeSource AncestorType=Border,Mode=FindAncestor}}">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="40" />
+				<RowDefinition Height="40" />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<Grid VerticalAlignment="Stretch" Grid.Row="0" Background="{DynamicResource brush_Primary}"  >
+				<StackPanel Orientation="Horizontal"  HorizontalAlignment="Left" Margin="0 10 0 0">
+					<Image x:Name="imgLogo" Source="/Resources/Images/RaugLogoSmall.png" Width="48" Height="Auto"  Margin="20 0 0 0" VerticalAlignment="Center"/>
+					<TextBlock  Text="{DynamicResource ApplicationName}" Foreground="{DynamicResource brush_menuTextColor}" FontSize="{DynamicResource fnt_AppName}" 
+								VerticalAlignment="Center" Margin="20 0 0 0"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 10 0 0">
+					<customControls:ImageButton Width="16" Height="16" ImageHeight="10" ImageWidth="10" ImagePath="/Resources/Images/minus.png" 
+												HoverImagePath="/Resources/Images/minus.png" 
+												Margin="10 0 0 0" PathHorizontalAlignment="Center" PathVerticalAlignment="Center">
+                        <dxmvvm:Interaction.Behaviors>
+                            <dxmvvm:EventToCommand  EventName="Click" Command="{Binding MinimizeCommand}" />
+                        </dxmvvm:Interaction.Behaviors>
+                        </customControls:ImageButton>
+					<customControls:ImageButton Width="16" ImageHeight="10" ImageWidth="10" Height="16" ImagePath="/Resources/Images/rectangle.png"
+												HoverImagePath="/Resources/Images/rectangle.png" 
+												Margin="10 0 0 0" PathHorizontalAlignment="Center" PathVerticalAlignment="Center">
+                        <dxmvvm:Interaction.Behaviors>
+                            <dxmvvm:EventToCommand  EventName="Click" Command="{Binding MaximizeCommand}" />
+                        </dxmvvm:Interaction.Behaviors>
+                        </customControls:ImageButton>
+					<customControls:ImageButton Width="16" Height="16" ImageHeight="10" ImageWidth="10" ImagePath="/Resources/Images/close.png" 
+												HoverImagePath="/Resources/Images/close.png" 
+												Margin="10 0 10 0" PathHorizontalAlignment="Center" PathVerticalAlignment="Center">
+                        <dxmvvm:Interaction.Behaviors>
+                            <dxmvvm:EventToCommand  EventName="Click" Command="{Binding CloseCommand}" />
+                        </dxmvvm:Interaction.Behaviors>
+                        </customControls:ImageButton>
+				</StackPanel>
+
+			</Grid>
+			<Grid Grid.Row="1" Background="{DynamicResource brush_Primary}">
+				<StackPanel Orientation="Horizontal"  HorizontalAlignment="Right"  Margin="0 0 200 0"  >
+					<customControls:MenuRadioButton Content="{DynamicResource txtHome}" Value="{x:Static local:Helpers.Enums.UIScreens.Home}" 
+													ForeColor="{DynamicResource brush_menuTextColor}"
+													HoverColor="{DynamicResource brush_menuTextHoverColor}"
+													RadioBinding="{Binding SelectedScreen,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  />
+
+                        <customControls:MenuRadioButton Content="{DynamicResource txtSoldiers}" Value="{x:Static local:Helpers.Enums.UIScreens.Soldiers}"
+													ForeColor="{DynamicResource brush_menuTextColor}"
+													HoverColor="{DynamicResource brush_menuTextHoverColor}"
+													RadioBinding="{Binding SelectedScreen,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                        <customControls:MenuRadioButton Content="{DynamicResource txtMap}" Value="{x:Static local:Helpers.Enums.UIScreens.Map}"
+											ForeColor="{DynamicResource brush_menuTextColor}"
+											HoverColor="{DynamicResource brush_menuTextHoverColor}"
+											RadioBinding="{Binding SelectedScreen,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+
+                        <customControls:MenuRadioButton Content="{DynamicResource txtSettings}" Value="{x:Static local:Helpers.Enums.UIScreens.Settings}"
+													ForeColor="{DynamicResource brush_menuTextColor}"
+													HoverColor="{DynamicResource brush_menuTextHoverColor}"
+													RadioBinding="{Binding SelectedScreen,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+			</StackPanel>
+			</Grid>
+			
+			<DockPanel Grid.Row="2" HorizontalAlignment="Stretch" LastChildFill="True">
+			
+
+				<ContentControl x:Name="mainContentHolder" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="{Binding MainContent}" 
+								ContentTemplateSelector="{StaticResource MainContentSelector}"/>
+			</DockPanel>
+		</Grid>
+	</Border>
+		<ContentControl VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="{Binding MsgBxContent}" Visibility="{Binding ShowMsgBox,Converter={StaticResource BoolToVisibilityConverter}}"
+							Panel.ZIndex="2"	ContentTemplateSelector="{StaticResource MsgContentSelector}" MouseDown="Window_MouseDown"/>
+	</Grid>
+</dx:DXWindow>

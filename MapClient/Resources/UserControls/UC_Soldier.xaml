@@ -1,0 +1,136 @@
+﻿<UserControl x:Class="Map.Client.Resources.UserControls.UC_Soldier"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Map.Client.Resources.UserControls"
+			 xmlns:custCtrl="clr-namespace:Map.Client.Resources.CustomControls"
+			 xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:cmd="http://www.galasoft.ch/mvvmlight"
+            xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+            mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" xmlns:mvvm="http://prismlibrary.com/">
+	<Grid Background="Transparent">
+		<StackPanel  Orientation="Horizontal" Margin="20 20 0 0 " VerticalAlignment="Top" >
+			<Image Source="{DynamicResource imgEmployeePage}" Height="32" Width="32"/>
+            <TextBlock Text="{DynamicResource txtSoldiers}" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="{DynamicResource brush_textColor}"
+				   FontSize="{DynamicResource fntPageTitle}" Margin="10 0 0 0 " />
+		</StackPanel>
+		<Grid Margin="20 50 0 0" >
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="0.4*"/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<ScrollViewer  Margin="20 20 0 0">
+				<StackPanel >
+
+					<TextBlock Text="{Binding PageTitle,FallbackValue=Add Role}" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="{DynamicResource brush_textColor}"
+				   FontSize="{DynamicResource fntsection}"  />
+                    <custCtrl:WatermarkTextBox  Margin="10 0 0 0" Watermark="{DynamicResource lblSoldierName}" MaxLines="1" 
+												Text="{Binding SelectedSoldier.Name,UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True,NotifyOnTargetUpdated=True}" />
+                    
+                    <custCtrl:WatermarkTextBox  Margin="10 0 0 0" Watermark="{DynamicResource lblTransponder}" MaxLines="1" 
+									Text="{Binding SelectedSoldier.DeviceId,UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True,NotifyOnTargetUpdated=True}" />
+                    
+                    <custCtrl:WatermarkTextBox  Margin="10 0 0 0" Watermark="{DynamicResource lblSoldierRank}" MaxLines="1" 
+										Text="{Binding SelectedSoldier.Rank,UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True,NotifyOnTargetUpdated=True}" />
+
+                    <custCtrl:WatermarkTextBox  Margin="10 0 0 0" Watermark="{DynamicResource lblCountry}" MaxLines="1" 
+										Text="{Binding SelectedSoldier.Country,UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True,NotifyOnTargetUpdated=True}" />
+
+                    <custCtrl:WatermarkTextBox  Margin="10 0 0 0" Watermark="{DynamicResource lblTraining}" MaxLines="1" 
+										Text="{Binding SelectedSoldier.Training,UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True,NotifyOnTargetUpdated=True}" />
+
+                    <TextBlock x:Name="txtHint" IsHitTestVisible="False" Foreground="{DynamicResource brush_textColor}"
+				   Text="{DynamicResource lblMarkerColor}" Height="Auto"  VerticalAlignment="Center" FontSize="{DynamicResource fnt_txtBxTitle}"
+						HorizontalAlignment="Left" Margin="10,10,0,0"  RenderTransformOrigin="0,0" FontWeight="ExtraLight" >
+                       
+                    </TextBlock>
+                    <dxe:ColorEdit EditValue="{Binding SelectedSoldier.MarkerColor,UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Grid.RowSpan="5" VerticalAlignment="Stretch" HorizontalAlignment="Left" Width="200" Margin="10 10 0 0" Grid.Column="3"/>
+
+
+                    <Grid  Margin="10 10 0 0">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition/>
+							<ColumnDefinition/>
+						</Grid.ColumnDefinitions>
+						<custCtrl:ImageTextButton ImagePath="/Resources/Images/close.png" ButtonText="Save" Margin="0 0 10 0" Grid.Column="0" >
+                            <dxmvvm:Interaction.Behaviors>
+                                <dxmvvm:EventToCommand  EventName="Click" Command="{Binding SaveCommand}" />
+                            </dxmvvm:Interaction.Behaviors>
+                        </custCtrl:ImageTextButton>
+						<custCtrl:ImageTextButton ImagePath="/Resources/Images/close.png" ButtonText="Cancel" Margin="0 0 0 0" Grid.Column="1">
+                            <dxmvvm:Interaction.Behaviors>
+                                <dxmvvm:EventToCommand  EventName="Click" Command="{Binding CancelCommand}" />
+                            </dxmvvm:Interaction.Behaviors>
+                        </custCtrl:ImageTextButton>
+
+
+
+					</Grid>
+
+				</StackPanel>
+			</ScrollViewer>
+
+			<TabControl Background="Transparent" Grid.Column="1"  Margin="20" BorderThickness="0" >
+				<TabItem Header="{DynamicResource imgGrid}"  >
+                    <DataGrid Grid.Row="1" ItemsSource="{Binding AllSoldiers}" AutoGenerateColumns="False" 
+					  CanUserAddRows="False" CanUserDeleteRows="False"  RowHeaderWidth="0" Background="Gray"
+					  CanUserResizeRows="False" GridLinesVisibility="Horizontal" >
+						<DataGrid.Columns>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*"  IsReadOnly="True"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Rank" Binding="{Binding Rank}" Width="*" IsReadOnly="True"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Country" Binding="{Binding Country}" Width="*" IsReadOnly="True"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Training" Binding="{Binding Training}" Width="*" IsReadOnly="True"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="Color" Width="0.5*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Canvas >
+                                                <Ellipse Height="20" Width="20" >
+                                                    <Ellipse.Fill>
+                                                        <SolidColorBrush Color="{Binding Path=DataContext.MarkerColor, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGridRow}}" />
+                                                    </Ellipse.Fill>
+                                                </Ellipse>
+                                            </Canvas>
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="Actions" Width="0.5*">
+								<DataGridTemplateColumn.CellTemplate>
+									<DataTemplate>
+										<Grid>
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition/>
+												<ColumnDefinition/>
+											</Grid.ColumnDefinitions>
+											<custCtrl:ImageButton Grid.Column="0" ImageHeight="16" HorizontalAlignment="Center" ImageWidth="16" 
+															  ImagePath="{DynamicResource imgEdit}" HoverImagePath="{DynamicResource imgEditHover}">
+                                                <dxmvvm:Interaction.Behaviors>
+                                                    <dxmvvm:EventToCommand  EventName="Click" Command="{Binding DataContext.EditCommand,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding PersonGuid}"/>
+                                                </dxmvvm:Interaction.Behaviors>                                                
+											</custCtrl:ImageButton>
+											<custCtrl:ImageButton Grid.Column="1" ImageHeight="16" HorizontalAlignment="Center" ImageWidth="16" 
+															  ImagePath="{DynamicResource imgDelete}" HoverImagePath="{DynamicResource imgDeleteHover}">
+                                                <dxmvvm:Interaction.Behaviors>
+                                                    <dxmvvm:EventToCommand  EventName="Click" Command="{Binding DataContext.DeleteCommand,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding PersonGuid}"/>
+                                                </dxmvvm:Interaction.Behaviors>
+											</custCtrl:ImageButton>
+										</Grid>
+									</DataTemplate>
+								</DataGridTemplateColumn.CellTemplate>
+							</DataGridTemplateColumn>
+						</DataGrid.Columns>
+
+					</DataGrid>
+				</TabItem>				
+			</TabControl>
+
+
+		</Grid>
+
+	</Grid>
+</UserControl>
+

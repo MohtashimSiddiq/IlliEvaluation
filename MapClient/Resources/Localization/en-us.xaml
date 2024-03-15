@@ -1,0 +1,78 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Map.Client.Resources.Localization"
+					xmlns:system="clr-namespace:System;assembly=mscorlib" >
+	<system:String x:Key="ApplicationLocale">en-US</system:String>
+	<system:String x:Key="ApplicationName">Thales</system:String>
+	<system:String x:Key="txtUserName">Username</system:String>
+	<system:String x:Key="txtPassword">Password</system:String>
+	<system:String x:Key="txtSettings">Settings</system:String>
+	<system:String x:Key="txtLocale">Locale</system:String>
+	<system:String x:Key="txtTheme">Themes</system:String>
+	<system:String x:Key="txtLocaleEnglish">English</system:String>
+	<system:String x:Key="txtLocaleGerman">Deutsche</system:String>
+	<system:String x:Key="txtThemeDark">Dark</system:String>
+	<system:String x:Key="txtThemeLight">Light</system:String>
+	<system:String x:Key="txtTraining">Training</system:String>
+	<system:String x:Key="lblSoldierName">Soldier Name</system:String>
+	<system:String x:Key="lblSoldierRank">Soldier Rank</system:String>
+    <system:String x:Key="lblTransponder">Device Id</system:String>
+    <system:String x:Key="lblCountry">Soldier Country</system:String>
+    <system:String x:Key="lblMarkerColor">Marker Color</system:String>
+    <system:String x:Key="lblTraining">Training</system:String>
+	<system:String x:Key="dgHdrRoleName">Name</system:String>
+	<system:String x:Key="dgHdrParentRoleName">Parent role</system:String>
+	<system:String x:Key="dgHdrRoleDescription">Description</system:String>
+    <system:String x:Key="txtAddTraining">Add Training</system:String>
+    <system:String x:Key="txtEditTraining">Edit Training</system:String>
+	<system:String x:Key="lblParentRole">Parent Role</system:String>
+    <system:String x:Key="txtSoldiers">Soldiers</system:String>
+	<system:String x:Key="txtAddSoldier">Add Soldier</system:String>
+	<system:String x:Key="txtEditSoldier">Edit Soldier</system:String>
+	<system:String x:Key="txtRequiredErr">Required field</system:String>
+	<system:String x:Key="txtBtnOk">Ok</system:String>
+	<system:String x:Key="txtBtnYes">Yes</system:String>
+	<system:String x:Key="txtBtnNo">No</system:String>
+	<system:String x:Key="txtHome">Home</system:String>
+	<system:String x:Key="txtMap">Map</system:String>
+	<system:String x:Key="txtVacantPosition">Vacant position</system:String>
+	
+	<!--- Message Box strings -->
+	<system:String x:Key="txtMsgTitleSuccess">Success</system:String>
+	<system:String x:Key="txtMsgTitleError">Error</system:String>
+	<system:String x:Key="txtMsgTitleConfirm">Confirmation</system:String>
+	
+	<system:String x:Key="txtMsgTextSolEditSuccess">Soldier edited successfullly</system:String>
+	<system:String x:Key="txtMsgTextTrainingEditSuccess">Training edited successfullly</system:String>
+	
+	<system:String x:Key="txtMsgTextSolEditError">Unable to edit soldier</system:String>
+	<system:String x:Key="txtMsgTextTrainingEditError">Unable to edit training</system:String>
+
+
+	<system:String x:Key="txtMsgTextSolAddSuccess">Soldier added successfullly</system:String>
+	<system:String x:Key="txtMsgTextTrainingAddSuccess">Training added successfullly</system:String>
+
+    <system:String x:Key="txtMsgTextEmpAddError">Unable to add soldier</system:String>
+    <system:String x:Key="txtMsgTextTrainingAddError">Unable to add training</system:String>
+
+    <system:String x:Key="txtMsgTextSolDeleteConfirm">Are you sure to delete this soldier?</system:String>
+	<system:String x:Key="txtMsgTextTrainingDeleteConfirm">Are you sure to delete this training?</system:String>
+
+    <system:String x:Key="txtMsgTextSolDelSuccess">Soldier deleted successfullly</system:String>
+	<system:String x:Key="txtMsgTextTrainingDelSuccess">Training deleted successfullly</system:String>
+
+    <system:String x:Key="txtMsgTextSolDelError">Unable to delete soldier</system:String>
+	<system:String x:Key="txtMsgTextTrainingDelError">Unable to delete training</system:String>
+
+	<!--Fonts-->
+	<system:Double x:Key="fnt_AppName">16</system:Double>
+	<system:Double x:Key="fntPageTitle">20</system:Double>
+	<system:Double x:Key="fntsection">16</system:Double>
+	<system:Double x:Key="fnt_txtBxTitle">16</system:Double>
+	<system:Double x:Key="fnt_txtBxContent">14</system:Double>
+	<system:Double x:Key="fnt_btnContent">12</system:Double>
+	<system:Double x:Key="fnt_dgHeaderText">12</system:Double>
+	<system:Double x:Key="fnt_txtRolesTitle">12</system:Double>
+	<system:Double x:Key="fnt_ErrorTitle">18</system:Double>
+	<system:Double x:Key="fnt_ErrorText">14</system:Double>
+</ResourceDictionary>

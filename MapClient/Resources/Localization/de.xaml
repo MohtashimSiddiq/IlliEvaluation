@@ -1,0 +1,79 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:local="clr-namespace:Map.Client.Resources.Localization"
+					xmlns:system="clr-namespace:System;assembly=mscorlib" >
+	<system:String x:Key="ApplicationLocale">de-US</system:String>
+	<system:String x:Key="ApplicationName">Thales</system:String>
+	<system:String x:Key="txtUserName">Username</system:String>
+	<system:String x:Key="txtPassword">Password</system:String>
+	<system:String x:Key="txtSettings">die Einstellungen</system:String>
+	<system:String x:Key="txtLocale">Sprache</system:String>
+	<system:String x:Key="txtTheme">Thema</system:String>
+	<system:String x:Key="txtLocaleEnglish">English</system:String>
+	<system:String x:Key="txtLocaleGerman">Deutsche</system:String>
+	<system:String x:Key="txtThemeDark">Dunkel</system:String>
+	<system:String x:Key="txtThemeLight">Licht</system:String>
+	<system:String x:Key="txtRoles">Rollen</system:String>
+	<system:String x:Key="lblRoleName">Name</system:String>
+	<system:String x:Key="lblRoleDescription">Beschreibung</system:String>
+	<system:String x:Key="dgHdrRoleName">Name</system:String>
+	<system:String x:Key="dgHdrParentRoleName">Übergeordnete Rolle</system:String>
+	<system:String x:Key="dgHdrRoleDescription">Beschreibung</system:String>
+	<system:String x:Key="txtAddRole">Rolle hinzufügen</system:String>
+	<system:String x:Key="txtEditRole">Rolle bearbeiten</system:String>
+	<system:String x:Key="lblParentRole">Übergeordnete Rolle</system:String>
+	<system:String x:Key="txtEmployees">Angestellte</system:String>
+	<system:String x:Key="txtAddEmployee">Mitarbeiter hinzufügen</system:String>
+	<system:String x:Key="txtEditEmployee">Mitarbeiter bearbeiten</system:String>
+	<system:String x:Key="txtRequiredErr">Pflichtfeld</system:String>
+	<system:String x:Key="txtBtnOk">Ok</system:String>
+	<system:String x:Key="txtBtnYes">Ja</system:String>
+	<system:String x:Key="txtBtnNo">Nein</system:String>
+	<system:String x:Key="txtHome">Zuhause</system:String>
+	<system:String x:Key="txtVacantPosition">Freie Stelle</system:String>
+	
+
+	<!--- Message Box strings -->
+	<system:String x:Key="txtMsgTitleSuccess">Erfolg</system:String>
+	<system:String x:Key="txtMsgTitleError">Error</system:String>
+	<system:String x:Key="txtMsgTitleConfirm">Bestätigung</system:String>
+	
+	<system:String x:Key="txtMsgTextEmpEditSuccess">Mitarbeiter erfolgreich bearbeitet</system:String>
+	<system:String x:Key="txtMsgTextRoleEditSuccess">Rolle erfolgreich bearbeitet</system:String>
+	
+	<system:String x:Key="txtMsgTextEmpEditError">Mitarbeiter kann nicht bearbeitet werden</system:String>
+	<system:String x:Key="txtMsgTextRoleEditError">Rolle kann nicht bearbeitet werden</system:String>
+
+
+	<system:String x:Key="txtMsgTextEmpAddSuccess">Mitarbeiter erfolgreich hinzugefügt</system:String>
+	<system:String x:Key="txtMsgTextRoleAddSuccess">Rolle erfolgreich hinzugefügt</system:String>
+	
+	<system:String x:Key="txtMsgTextEmpAddError">Mitarbeiter kann nicht hinzugefügt werden</system:String>
+	<system:String x:Key="txtMsgTextRoleAddError">Rolle kann nicht hinzugefügt werden</system:String>
+
+	<system:String x:Key="txtMsgTextEmpDeleteConfirm">Sind Sie sicher, diesen Mitarbeiter zu löschen?</system:String>
+	<system:String x:Key="txtMsgTextRoleDeleteConfirm">Sind Sie sicher, diese Rolle zu löschen?</system:String>
+
+	<system:String x:Key="txtMsgTextEmpDelSuccess">Mitarbeiter erfolgreich gelöscht</system:String>
+	<system:String x:Key="txtMsgTextRoleDelSuccess">Role deleted successfullly</system:String>
+	
+	<system:String x:Key="txtMsgTextEmpDelError">Mitarbeiter kann nicht gelöscht werden</system:String>
+	<system:String x:Key="txtMsgTextRoleDelError">Rolle kann nicht gelöscht werden</system:String>
+
+	<system:String x:Key="txtMsgTextRoleDelErrorEmployeeExists">Rolle kann nicht gelöscht werden. In dieser Rolle existiert ein Mitarbeiter.</system:String>
+	<system:String x:Key="txtMsgTextRoleDelErrorSubOrdinatesExists">Rolle kann nicht gelöscht werden. Mitarbeiter existieren unter dieser Rolle.</system:String>
+	<system:String x:Key="txtMsgTextParentRoleModifiedToSelf">Die übergeordnete Rolle kann nicht von sich selbst sein</system:String>
+	<system:String x:Key="txtMsgTextRoleEditConfirm">Das Bearbeiten der Rolle kann die Organisationsstruktur ändern! &#10; Möchten Sie fortfahren?</system:String>
+
+	<!--Fonts-->
+	<system:Double x:Key="fnt_AppName">16</system:Double>
+	<system:Double x:Key="fntPageTitle">20</system:Double>
+	<system:Double x:Key="fntsection">16</system:Double>
+	<system:Double x:Key="fnt_txtBxTitle">16</system:Double>
+	<system:Double x:Key="fnt_txtBxContent">14</system:Double>
+	<system:Double x:Key="fnt_btnContent">12</system:Double>
+	<system:Double x:Key="fnt_dgHeaderText">12</system:Double>
+	<system:Double x:Key="fnt_txtRolesTitle">12</system:Double>
+	<system:Double x:Key="fnt_ErrorTitle">18</system:Double>
+	<system:Double x:Key="fnt_ErrorText">14</system:Double>
+</ResourceDictionary>
